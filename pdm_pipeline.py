@@ -31,7 +31,7 @@ scaler = MinMaxScaler()
 scaled = scaler.fit_transform(df[features])
 df_scaled = pd.DataFrame(scaled, columns=features)
 
-# Prepare sequences
+# Prepare sequences 
 X, y = [], []
 seq_len = 10
 for i in range(len(df_scaled) - seq_len):
@@ -60,7 +60,7 @@ es = EarlyStopping(monitor="val_loss", patience=10, restore_best_weights=True)
 history = model.fit(
     X_train, y_train,
     validation_data=(X_test, y_test),
-    epochs=500,
+    epochs=1000,
     batch_size=len(X_train),
     callbacks=[es],
     verbose=1
@@ -245,11 +245,11 @@ while True:
 
         sensor_status = []
         for feat, val in zip(features, real_vals):
-            if feat == 'vibration' and val > 1.0:
+            if feat == 'vibration' and val > 0.5:
                 status = "⚠️ HIGH"
             elif feat == 'temperature' and val > 80:
                 status = "⚠️ HIGH"
-            elif feat == 'motor_current' and val > 15:
+            elif feat == 'motor_current' and val > 12:
                 status = "⚠️ HIGH"
             elif feat == 'rpm' and val > 28000:
                 status = "⚠️ HIGH"
