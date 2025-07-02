@@ -1,3 +1,12 @@
+# =============================================================================
+#  predictive_maintenance.py
+#  © 2025 [Mohamed Hashim]
+#
+#  Licensed under the Creative Commons
+#  Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)
+#  – you may share and adapt, but not for commercial purposes.
+#  https://creativecommons.org/licenses/by-nc/4.0/
+# =============================================================================
 import os
 import pandas as pd
 import numpy as np
